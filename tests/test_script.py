@@ -3,10 +3,10 @@ import unittest
 import sys, os
 import pandas as pd
 import numpy as np
+
 sys.path.insert(0, "../scripts/")
 sys.path.append(os.path.abspath(os.path.join("scripts")))
 from preprocess import Preproccessing
-
 
 
 df = pd.DataFrame(
@@ -23,9 +23,6 @@ class TestCases(unittest.TestCase):
         data_preprocessing = Preproccessing(df)
         self.assertEqual(df.info(), data_preprocessing.df.info())
 
-    def test_remove_duplicates(self):
-        data_preprocessing = Preproccessing(df)
-        self.assertEqual(df.describe(), data_preprocessing.df.describe())
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
