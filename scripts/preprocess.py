@@ -4,6 +4,9 @@ import pandas as pd
 class Preproccessing:
     def __init__(self, df: pd.DataFrame):
         self.df = df
+        
+    def show_datatypes(self) -> pd.DataFrame:
+        return self.df.dtypes
 
     def get_null_percentage_of_dataframe(self) -> pd.DataFrame:
         return (
