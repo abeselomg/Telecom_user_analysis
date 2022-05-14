@@ -1,11 +1,14 @@
-FROM jupyter/scipy-notebook
+FROM python:3.8-slim
 
-RUN pip install joblib
+ENV PYTHONDONTWRITEBYTECODE=1
 
-COPY train.csv ./train.csv
-COPY test.csv ./test.csv
+ENV PYTHONUNBUFFERED=1
 
-COPY train.py ./train.py
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+
 COPY inference.py ./inference.py
 
-RUN python3 train.py
+# RUN python3 dashboard.py
