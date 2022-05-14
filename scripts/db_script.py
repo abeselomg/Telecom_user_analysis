@@ -78,6 +78,6 @@ def db_execute_fetch(
 
 if __name__ == "__main__":
     createTables(dbName="tweet_db")
-    df = pd.read_csv("data/cleaned_economic_data.csv")
+    df = pd.read_csv("../data/score_table.csv")
     df.info()
     insert_to_table(dbName=dbname, df=df, table_name="TELEUSER")
